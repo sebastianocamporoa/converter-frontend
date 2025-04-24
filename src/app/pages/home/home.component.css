@@ -1,0 +1,11 @@
+.converter-card {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 32px;
+    text-align: center;
+}
+
+mat-toolbar {
+    font-size: 1.2rem;
+    justify-content: center;
+}
