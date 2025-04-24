@@ -10,6 +10,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { ConversionService } from '../../services/conversion.service';
+import { BottomBannerAdComponent } from '../../shared/bottom-banner-ad/bottom-banner-ad.component';
 
 
 @Component({
@@ -22,7 +23,8 @@ import { ConversionService } from '../../services/conversion.service';
     MatIconModule,
     MatProgressBarModule,
     MatSnackBarModule,
-    MatToolbarModule
+    MatToolbarModule,
+    BottomBannerAdComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
