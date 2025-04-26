@@ -9,8 +9,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { ConversionService } from '../../services/conversion.service';
+
 import { BottomBannerAdComponent } from '../../shared/bottom-banner-ad/bottom-banner-ad.component';
+import { ConversionService } from '../../core/services/conversion.service';
 
 
 @Component({

@@ -1,7 +1,13 @@
+// src/main.ts
 import { bootstrapApplication } from '@angular/platform-browser';
-import { HomeComponent } from './app/pages/home/home.component';
-import { provideHttpClient } from '@angular/common/http';
+import { AppComponent } from './app/app.component';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideRouter } from '@angular/router';
+import { routes } from './app/app.routes';
 
-bootstrapApplication(HomeComponent, {
-  providers: [provideHttpClient()],
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideHttpClient(),
+    provideRouter(routes),
+  ],
 });
