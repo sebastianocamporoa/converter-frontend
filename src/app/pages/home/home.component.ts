@@ -31,14 +31,34 @@ import { BottomBannerAdComponent } from '../../shared/bottom-banner-ad/bottom-ba
 })
 export class HomeComponent {
   loading = false;
+  isHovering = false;
   snackbar = inject(MatSnackBar);
 
   constructor(private conversionService: ConversionService) { }
 
+  onDragOver(event: DragEvent) {
+    event.preventDefault();
+    this.isHovering = true;
+  }
+
+  onDragLeave(event: DragEvent) {
+    event.preventDefault();
+    this.isHovering = false;
+  }
+
+  onDrop(event: DragEvent) {
+    event.preventDefault();
+    this.isHovering = false;
+    const file = event.dataTransfer?.files[0];
+    if (file) this.convert(file);
+  }
+
   onFileSelected(event: any) {
     const file = event.target.files[0];
-    if (!file) return;
+    if (file) this.convert(file);
+  }
 
+  private convert(file: File) {
     this.loading = true;
 
     this.conversionService.convertPdfToWord(file).subscribe({
@@ -53,7 +73,7 @@ export class HomeComponent {
       },
       error: () => {
         this.loading = false;
-        this.snackbar.open('Ocurrió un error al convertir el archivo.', 'Cerrar', { duration: 4000 });
+        this.snackbar.open('Error al convertir el archivo.', 'Cerrar', { duration: 4000 });
       },
     });
   }

@@ -1,19 +1,21 @@
-<!-- <mat-toolbar color="primary">PDF Ninja</mat-toolbar> -->
+<mat-toolbar color="primary" class="toolbar">
+    ToAny - Convertidor de Archivos
+</mat-toolbar>
 
-<mat-card class="converter-card">
-    <h2>Convertidor PDF a Word</h2>
+<main class="main-container">
+    <mat-card class="converter-card">
+        <div class="dropzone" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)"
+            (click)="fileInput.click()" [class.hovering]="isHovering">
+            <mat-icon class="cloud-icon" color="primary">cloud_upload</mat-icon>
+            <p class="drop-text">Drag & Drop your files here</p>
+            <input type="file" hidden #fileInput (change)="onFileSelected($event)"
+                accept=".pdf,.doc,.docx,.jpg,.png,.txt" />
+        </div>
 
-    <button mat-raised-button color="accent">
-        <label for="fileInput" style="cursor: pointer; display: flex; align-items: center;">
-            <mat-icon>upload</mat-icon>&nbsp; Seleccionar archivo PDF
-        </label>
-    </button>
-
-    <input type="file" id="fileInput" hidden (change)="onFileSelected($event)" accept=".pdf" />
-
-    <div *ngIf="loading" style="margin-top: 20px;">
-        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-    </div>
-</mat-card>
+        <div *ngIf="loading" class="progress-container">
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </div>
+    </mat-card>
+</main>
 
 <app-bottom-banner-ad></app-bottom-banner-ad>
