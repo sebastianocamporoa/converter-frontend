@@ -45,3 +45,13 @@
 .progress-container {
     margin-top: 20px;
 }
+
+.page-content {
+    padding-bottom: 90px;
+}
+
+@media (max-width: 600px) {
+    .page-content {
+        padding-bottom: 110px;
+    }
+}

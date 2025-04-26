@@ -1,0 +1,33 @@
+.dropzone {
+    border: 2px dashed #3f83f8;
+    border-radius: 10px;
+    background-color: #f8fbff;
+    text-align: center;
+    padding: 40px 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+    cursor: pointer;
+}
+
+.dropzone.hover {
+    background-color: #e8f0fe;
+    border-color: #2563eb;
+}
+
+.upload-icon {
+    width: 60px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.drop-text {
+    color: #94a3b8;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}

@@ -1,21 +1,4 @@
-<mat-toolbar color="primary" class="toolbar">
-    ToAny - Convertidor de Archivos
-</mat-toolbar>
-
-<main class="main-container">
-    <mat-card class="converter-card">
-        <div class="dropzone" (dragover)="onDragOver($event)" (dragleave)="onDragLeave($event)" (drop)="onDrop($event)"
-            (click)="fileInput.click()" [class.hovering]="isHovering">
-            <mat-icon class="cloud-icon" color="primary">cloud_upload</mat-icon>
-            <p class="drop-text">Drag & Drop your files here</p>
-            <input type="file" hidden #fileInput (change)="onFileSelected($event)"
-                accept=".pdf,.doc,.docx,.jpg,.png,.txt" />
-        </div>
-
-        <div *ngIf="loading" class="progress-container">
-            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-        </div>
-    </mat-card>
-</main>
-
+<div class="page-content">
+    <app-pdf-converter (conversionCompleted)="onConversionCompleted()"></app-pdf-converter>
+</div>
 <app-bottom-banner-ad></app-bottom-banner-ad>
