@@ -1,0 +1,7 @@
+<div class="conversion-container">
+    <h1>Convertir {{ from.toUpperCase() }} a {{ to.toUpperCase() }}</h1>
+
+    <input type="file" (change)="onFileSelected($event)" />
+
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+</div>

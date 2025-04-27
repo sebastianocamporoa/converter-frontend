@@ -1,0 +1,15 @@
+<div class="format-selector">
+    <select [(ngModel)]="fromFormat">
+        <option value="">De formato...</option>
+        <option *ngFor="let format of formats" [value]="format">{{ format.toUpperCase() }}</option>
+    </select>
+
+    <select [(ngModel)]="toFormat">
+        <option value="">A formato...</option>
+        <option *ngFor="let format of formats" [value]="format">{{ format.toUpperCase() }}</option>
+    </select>
+
+    <button (click)="convert()" [disabled]="!fromFormat || !toFormat">
+        Convertir
+    </button>
+</div>

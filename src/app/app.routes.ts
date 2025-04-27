@@ -1,8 +1,9 @@
-// src/app/app.routes.ts
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { ConversionPageComponent } from './pages/conversion-page/conversion-page.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: '**', redirectTo: '' }, // Ruta para manejar cualquier 404
+    { path: '', component: LandingPageComponent },
+    { path: 'convert/:from-:to', component: ConversionPageComponent },
+    { path: '**', redirectTo: '' },
 ];
